@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: Vapor
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: "npm install -g pnpm && pnpm install && pnpm build"
+    startCommand: "pnpm serve"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
